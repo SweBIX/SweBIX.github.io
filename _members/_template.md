@@ -14,10 +14,10 @@
 first_name: "Åsa"
 last_name: "Öberg"
 
-# Swedish organizations you work for or within, ordered from most specific to
-# most general: research groups, (infrastructure) units and (core) facilities,
-# platforms, and larger organizations such as research infrastructures. List
-# site-bound organizations (e.g. your university or company) last. Do not list
+# Swedish organizations you work for or within, from most specific to most
+# general: list each research group, (infrastructure) unit, (core) facility, or
+# platform right before the organization it belongs to, and site-bound
+# organizations (e.g. your university or company) last. Do not list
 # departments, divisions, or (international) networks and communities; mention
 # those in the free text after the closing "---".
 #
