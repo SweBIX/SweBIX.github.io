@@ -11,7 +11,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-rtl: # true, false (default) # turns direction of the page into right to left for RTL languages
+direction: # "ltr" (default), "rtl" # set the direction of the page
 title: SweBIdx
 title_separator: "-"
 subtitle: Swedish BioImage Data & Developers Exchange
@@ -218,6 +218,8 @@ kramdown:
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  quiet_deps: true
+  silence_deprecations: ['import']
 
 # Outputting
 permalink: /:categories/:title/
@@ -300,6 +302,14 @@ compress_html:
   ignore:
     envs: development
 
+# Collections
+collections:
+  members:
+    output: true
+    permalink: /:collection/:path/
+  organizations:
+    output: false
+
 # Defaults
 defaults:
   # _pages
@@ -315,10 +325,10 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: # true
-      share: true
+      share: false
       related: false
       permalink: /news/:path/
   # _members
@@ -328,10 +338,3 @@ defaults:
     values:
       layout: member
       author_profile: false
-
-collections:
-  members:
-    output: true
-    permalink: /:collection/:path/
-  organizations:
-    output: false
