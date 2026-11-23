@@ -3,7 +3,7 @@ layout: default
 ---
 {%- comment -%}
   Member profile, based on the theme's author sidebar (author-profile.html):
-  photo and contact details on the left; name, affiliations and free text on
+  photo and contact details on the left; name, affiliations, and free text on
   the right.
 {%- endcomment -%}
 {%- assign full_name = page.first_name | append: " " | append: page.last_name | strip -%}
@@ -14,7 +14,7 @@ layout: default
       <meta itemprop="name" content="{{ full_name }}">
 
       <div class="author__avatar">
-        {% include swebidx/member-avatar.html member=page variant="large" %}
+        {% include swebix/member-avatar.html member=page variant="large" %}
       </div>
 
       <div class="author__urls-wrapper">
@@ -44,7 +44,7 @@ layout: default
       <header>
         <h1 id="page-title" class="page__title member__title">{{ full_name }}</h1>
         <div class="page__meta member__byline">
-          {% include swebidx/member-affiliations.html affiliations=page.affiliations format="short" %}
+          {% include swebix/member-affiliations.html affiliations=page.affiliations format="short" %}
         </div>
       </header>
 

@@ -1,10 +1,10 @@
 # main links
 main:
-  - title: Members
-    url: /members/
+  - title: About
+    url: /about/
   - title: Activities
     url: /activities/
-  - title: News
-    url: /news/
+  - title: Members
+    url: /members/
   - title: Contact
     url: /contact/

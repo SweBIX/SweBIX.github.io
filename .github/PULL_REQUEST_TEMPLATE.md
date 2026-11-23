@@ -1,5 +1,5 @@
 <!--
-Joining SweBIdx or updating your profile? Complete the checklist below.
+Joining SweBIX or updating your profile? Complete the checklist below.
 
 Other changes? Delete the checklist and describe your changes instead.
 -->

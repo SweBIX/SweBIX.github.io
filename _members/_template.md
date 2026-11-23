@@ -34,7 +34,7 @@ city: "Uppsala" # where you work
 # --- Optional (leave empty to not publish) ------------------------------------
 
 # Photo of yourself that you have the right to publish: square (1:1), 400x400 to
-# 800x800 pixels, JPEG, PNG or WebP, at most 200 kB. Add it to
+# 800x800 pixels, JPEG, PNG, or WebP, at most 200 kB. Add it to
 # assets/images/members/, named like this file (e.g. asa-oberg.jpg). Without a
 # photo, your GitHub avatar is shown if you provide a GitHub handle, otherwise
 # your initials.

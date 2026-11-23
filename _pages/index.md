@@ -1,15 +1,24 @@
 ---
-title: Hej hej
 permalink: /
 ---
 
-This site is under construction and the SweBIdx initiative is still in its infancy (the name itself is a working title). Interested already? Get in touch by contacting one of the [existing members](/members/).
-{: .notice--warning }
+<h1 id="page-title" class="page__title">Hej hej</h1>
 
-The *Swedish BioImage Data & Developers Exchange (SweBIdx)* is a community for everyone working on the computational side of bioimaging within Sweden &mdash; from bioimage analysts and hands-on data stewards to domain-specific IT infrastructure providers and research software engineers (RSEs).
+The *Swedish BioImage Computing Network* (SweBIX) is a community for everyone working on the computational side of bioimaging within Sweden, including:
 
-We are an open and welcoming do-ocracy dedicated to advancing computational aspects of bioimaging within Sweden and beyond. We enjoy working together, exchange knowledge and coordinate our activities. Together, we get things done.
+- bioimage analysts
+- hands-on data stewards
+- domain-specific IT infrastructure specialists
+- tool developers & research software engineers (RSEs)
+
+Learn more [about us](/about/) and [our activities](/activities/).
 
 ## Join us
 
-Ready to contribute? [Make a pull request](https://github.com/SweBIdx/SweBIdx.github.io) to add yourself to our members database, following the [member template](https://github.com/SweBIdx/SweBIdx.github.io/blob/main/_members/_template.md). Once your pull request is approved by an existing member and merged by a repository owner, you will be invited to our Zulip organization and recurring activities.
+*Do you work on the computational side of bioimaging in Sweden?*
+
+Then you're one of us, and we'd love to have you! To join:
+
+1. [Open a pull request](https://github.com/SweBIX/SweBIX.github.io/new/main/_members) with a copy of the [member template](https://github.com/SweBIX/SweBIX.github.io/blob/main/_members/_template.md).
+2. Ask an [existing member](/members/) to approve your pull request.
+3. Once it's merged, we'll add you to our [Zulip channel](https://imagesc.zulipchat.com/#narrow/channel/658147-SweBIX).

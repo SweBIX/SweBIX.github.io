@@ -1,4 +1,4 @@
-/* Member avatars (photo, GitHub avatar or initials) */
+/* Member avatars (photo, GitHub avatar, or initials) */
 
 .member-avatar {
   position: relative;
@@ -37,6 +37,11 @@
   height: auto;
   aspect-ratio: 1;
   font-size: 40px;
+
+  /* small screens: the sidebar comes before the name, so keep the photo small */
+  @include breakpoint(max-width ($large - 1px)) {
+    max-width: 120px;
+  }
 }
 
 /* Member profile, based on the theme's author sidebar */
