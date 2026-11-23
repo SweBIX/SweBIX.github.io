@@ -12,6 +12,4 @@ We are an open and welcoming do-ocracy dedicated to advancing computational aspe
 
 ## Join us
 
-Ready to contribute? [Make a pull request](https://github.com/SweBIdx/SweBIdx.github.io) to add yourself to our members database. Once your pull request is approved by an existing member and merged by a repository owner, you will be invited to our Zulip organization and recurring activities.
-
-TODO: pull request template
+Ready to contribute? [Make a pull request](https://github.com/SweBIdx/SweBIdx.github.io) to add yourself to our members database, following the [member template](https://github.com/SweBIdx/SweBIdx.github.io/blob/main/_members/_template.md). Once your pull request is approved by an existing member and merged by a repository owner, you will be invited to our Zulip organization and recurring activities.
