@@ -1,0 +1,56 @@
+---
+layout: default
+---
+{%- comment -%}
+  Member profile, based on the theme's author sidebar (author-profile.html):
+  photo and contact details on the left; name, affiliations and free text on
+  the right.
+{%- endcomment -%}
+{%- assign full_name = page.first_name | append: " " | append: page.last_name | strip -%}
+
+<div id="main" role="main">
+  <div class="sidebar sticky member__sidebar">
+    <div itemscope itemtype="https://schema.org/Person" class="h-card">
+      <meta itemprop="name" content="{{ full_name }}">
+
+      <div class="author__avatar">
+        {% include swebidx/member-avatar.html member=page variant="large" %}
+      </div>
+
+      <div class="author__urls-wrapper">
+        <ul class="author__urls social-icons">
+          <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+            <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i> <span itemprop="name" class="p-locality">{{ page.city }}</span>
+          </li>
+          {% if page.email %}
+            <li><a href="mailto:{{ page.email }}" class="u-email"><meta itemprop="email" content="{{ page.email }}"><i class="fas fa-fw fa-square-envelope" aria-hidden="true"></i><span class="label">{{ page.email }}</span></a></li>
+          {% endif %}
+          {% if page.website %}
+            <li><a href="{{ page.website }}" class="u-url" itemprop="url" rel="me"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">{{ page.website }}</span></a></li>
+          {% endif %}
+          {% if page.orcid %}
+            <li><a href="https://orcid.org/{{ page.orcid }}" itemprop="sameAs" rel="me"><i class="fab fa-fw fa-orcid" aria-hidden="true"></i><span class="label">{{ page.orcid }}</span></a></li>
+          {% endif %}
+          {% if page.github %}
+            <li><a href="https://github.com/{{ page.github }}" itemprop="sameAs" rel="me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">{{ page.github }}</span></a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <article class="page">
+    <div class="page__inner-wrap">
+      <header>
+        <h1 id="page-title" class="page__title member__title">{{ full_name }}</h1>
+        <div class="page__meta member__byline">
+          {% include swebidx/member-affiliations.html affiliations=page.affiliations format="short" %}
+        </div>
+      </header>
+
+      <section class="page__content">
+        {{ content }}
+      </section>
+    </div>
+  </article>
+</div>

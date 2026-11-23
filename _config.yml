@@ -326,10 +326,12 @@ defaults:
       path: ""
       type: members
     values:
-      layout: single
+      layout: member
       author_profile: false
 
 collections:
   members:
     output: true
     permalink: /:collection/:path/
+  organizations:
+    output: false

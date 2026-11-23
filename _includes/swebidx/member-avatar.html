@@ -1,0 +1,20 @@
+{%- comment -%}
+  Renders a member's avatar: their photo, otherwise their GitHub avatar,
+  otherwise their initials. The initials are always rendered underneath, so
+  they also show if an image fails to load.
+  Parameters:
+    member:  member document
+    variant: "small" (default) or "large"
+{%- endcomment -%}
+{%- assign member = include.member -%}
+{%- assign avatar_src = nil -%}
+{%- if member.photo -%}
+  {%- assign avatar_src = "/assets/images/members/" | append: member.photo | relative_url -%}
+{%- elsif member.github -%}
+  {%- assign avatar_src = "https://github.com/" | append: member.github | append: ".png?size=320" -%}
+{%- endif -%}
+{%- capture initials -%}{{ member.first_name | slice: 0 }}{{ member.last_name | slice: 0 }}{%- endcapture -%}
+<span class="member-avatar member-avatar--{{ include.variant | default: 'small' }}" aria-hidden="true">
+  {{- initials | upcase -}}
+  {%- if avatar_src %}<img src="{{ avatar_src }}" alt=""{% unless include.variant == "large" %} loading="lazy"{% endunless %} onerror="this.remove()">{% endif -%}
+</span>

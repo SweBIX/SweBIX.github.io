@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders a member's affiliations, each linking to the organization's website
+  (if any).
+  Parameters:
+    affiliations: list of organization keys, i.e. file names (without .md) of
+                  entries in _organizations/
+    format:       "long" (default; full name) or "short"
+{%- endcomment -%}
+{%- assign format = include.format | default: "long" -%}
+<ul class="member__affiliations">
+  {%- for key in include.affiliations -%}
+    {%- assign organization = site.organizations | where: "slug", key | first -%}
+    <li>
+      {%- if organization -%}
+        {%- capture label -%}
+          {%- if format == "short" -%}
+            <abbr title="{{ organization.title | escape }}">{{ organization.short_name }}</abbr>
+          {%- else -%}
+            {{ organization.title }} ({{ organization.short_name }})
+          {%- endif -%}
+        {%- endcapture -%}
+        {%- if organization.website -%}
+          <a href="{{ organization.website }}">{{ label }}</a>
+        {%- else -%}
+          {{ label }}
+        {%- endif -%}
+      {%- else -%}
+        <strong>unknown organization "{{ key }}"</strong>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

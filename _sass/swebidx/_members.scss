@@ -1,0 +1,149 @@
+/* Member avatars (photo, GitHub avatar or initials) */
+
+.member-avatar {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: $light-gray;
+  color: $text-color;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.member-avatar--small {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.member-avatar--large {
+  /* fill the sidebar's avatar area, up to a maximum */
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  aspect-ratio: 1;
+  font-size: 40px;
+}
+
+/* Member profile, based on the theme's author sidebar */
+
+.member__sidebar {
+  /* the theme fades the sidebar until hovered, which makes photos look gray */
+  opacity: 1;
+
+  .author__avatar .member-avatar img {
+    /* undo the theme's ring around author avatar images */
+    max-width: none;
+    padding: 0;
+    border: 0;
+  }
+
+  /* photo above the links: the theme puts them side by side (with a small
+     photo) on small screens */
+  .author__avatar {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  .author__urls-wrapper {
+    display: block;
+    /* space between photo and links; in the theme, the author's name sits
+       between them, but we show the name as the page title instead */
+    margin-top: 1.5em;
+  }
+
+  .author__urls {
+    /* always show the links: the theme hides them in a dropdown behind a
+       "Follow" button on small screens */
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+
+    /* hide the dropdown's arrow pointing at the (removed) "Follow" button */
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    li {
+      /* let long email addresses and URLs wrap instead of overflowing */
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+/* Equal gaps around the affiliations; rem, as title and byline have different
+   font sizes (em would scale with each) */
+
+.member__title {
+  margin-bottom: 1rem;
+}
+
+.page__title + .member__byline {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Members list: avatar, name, and a line with affiliations */
+
+.member-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member-list__item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.member-list__name {
+  font-weight: bold;
+}
+
+.member-list__meta {
+  color: $muted-text-color;
+  font-size: $type-size-6;
+}
+
+/* Affiliations as one line, separated by "·" (members list, profile byline) */
+
+.member-list__meta,
+.member__byline {
+  .member__affiliations {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+    }
+
+    li + li::before {
+      content: " · ";
+    }
+  }
+}
